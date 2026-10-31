@@ -91,7 +91,8 @@ export interface TextualBodyViewSnapshot {
 
 export interface TextualBodyViewActions {
     /**
-     * Capture-phase click handler attached to the root message-body container.
+     * Bubble-phase click handler attached to the root message-body container.
+     * Runs after handlers of interactive children (e.g. pills), which may stop propagation.
      */
     onRootClick?: MouseEventHandler<HTMLDivElement>;
     /**
