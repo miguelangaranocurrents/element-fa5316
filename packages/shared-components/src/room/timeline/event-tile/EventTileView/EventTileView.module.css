@@ -171,6 +171,11 @@
     visibility: hidden;
 }
 
+/* The edit composer's autocomplete and formatting bar extend outside the body. */
+.root.stateEditing .slotBody > * {
+    overflow: visible;
+}
+
 .root.stateInfo {
     padding-top: 0;
     font-size: var(--cpd-font-size-body-sm);

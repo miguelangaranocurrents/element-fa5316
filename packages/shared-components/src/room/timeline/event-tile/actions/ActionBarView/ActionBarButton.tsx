@@ -49,7 +49,7 @@ export function ActionBarButton({
         localRef.current.tabIndex = tabIndex;
     }, [tabIndex]);
 
-    const handleContextMenu = (event: React.MouseEvent<HTMLButtonElement>): void => {
+    const handleActivate = (event: React.MouseEvent<HTMLButtonElement>): void => {
         event.preventDefault();
         event.stopPropagation();
         onActivate?.(event.currentTarget);
@@ -67,8 +67,8 @@ export function ActionBarButton({
                 aria-pressed={ariaPressed}
                 aria-expanded={ariaExpanded}
                 disabled={disabled}
-                onClick={(event) => onActivate?.(event.currentTarget)}
-                onContextMenu={handleContextMenu}
+                onClick={handleActivate}
+                onContextMenu={handleActivate}
                 onFocus={disabled ? undefined : onFocus}
                 className={styles.toolbar_item}
                 Icon={iconOnly ? icon : undefined}
